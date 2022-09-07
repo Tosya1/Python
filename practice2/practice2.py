@@ -3,11 +3,8 @@
 # Пример:
 # пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
+from functools import reduce
+
 n = int(input('Введите число N: '))
-list = [i for i in range(1, n + 1)]
-list1 = [1]
-i = 1
-while i < len(list):
-    list1.append(list[i] * list1[i-1])
-    i += 1
-print(list1)
+li = [reduce(lambda x, y: x * y, [i for i in range(1, i + 1)] ) for i in range(1, n + 1)]
+print(li)
